@@ -7,11 +7,17 @@ body {
     width: 80%;
     margin: 0 auto;
 }
+.slider__slides {
+    /*display: flex;
+    flex-wrap: nowrap;*/
+    /*width: 600%;*/
+    white-space: nowrap;
+    transition: transform 2s ease;
+}
 .slider__item {
     margin-bottom: 20px;
-    display: flex;
+    display: inline-block;
     width: 100%;
-    justify-content: center;
 }
 .slider-wrapper {
     overflow: hidden;
@@ -21,23 +27,15 @@ body {
     /*width: 100%;*/
     text-align: center;
 }
-.slider__slides {
-    /*display: flex;
-    flex-wrap: nowrap;*/
-    /*width: 600%;*/
-    transition: transform 2s ease;
-}
 .slider-bottom {
     display: flex;
     justify-content: space-between;
 }
 .slider__item-img {
-    max-width: 40%;
-    height: auto;
-    margin: 0 auto;
+    height: 80vh;
 }
-.slider__item-text {
-
+.slider__text {
+    width: 100%;
 }
 input {
     visibility: hidden;
@@ -54,27 +52,27 @@ label {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-#btn-1:checked ~ .slider-slides ~ .slider__item:not(:first-child) {
-    opacity: 0;
+#btn-1:checked ~ .slider-slides {
+    transform: translate(0);
 }
-#btn-2:checked ~ .slider__slides .slider__item:not(:nth-of-type(2)) {
-    opacity: 0;
+#btn-2:checked ~ .slider__slides {
+    transform: translate(-100%);
 }
-/*#btn-3:checked ~ .slider__slides {
-    transform: translate(-130em);
+#btn-3:checked ~ .slider__slides {
+    transform: translate(-200%);
 }
 #btn-4:checked ~ .slider__slides {
-    transform: translate(-195em);
+    transform: translate(-300%);
 }
 #btn-5:checked ~ .slider__slides {
-    transform: translate(-260em);
+    transform: translate(-400%);
 }
 #btn-6:checked ~ .slider__slides {
-    transform: translate(-325em);
+    transform: translate(-500%);
 }
 #btn-7:checked ~ .slider__slides {
-    transform: translate(-390em);
-}*/
+    transform: translate(-600%);
+}
 #btn-1:checked ~ .slider-bottom .slider__controls label[for="btn-1"],
 #btn-2:checked ~ .slider-bottom .slider__controls label[for="btn-2"],
 #btn-3:checked ~ .slider-bottom .slider__controls label[for="btn-3"],
