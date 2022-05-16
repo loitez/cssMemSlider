@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    background-color: #303030;
+}
+.container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.slider__slides {
+    width: 700%;
+    display: flex;
+    white-space: nowrap;
+}
+.slider__item {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14.3%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out, transform 1s ease;
+}
+.slider-wrapper {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 2em;
+    box-shadow: 0 0 2em black;
+    text-align: center;
+    height: 80%;
+}
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slider__item-img {
+    border-radius: 1em;
+    height: 25em;
+    max-width: 100%;
+    object-fit: cover;
+}
+input {
+    visibility: hidden;
+}
+label {
+    padding: 0.5em;
+    cursor: pointer;
+}
+.marker {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.1em solid transparent;
+    background-color: #9b9b9b;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.label-control:active .marker {
+    border: 0.1em solid #9b9b9b;
+    box-shadow: 0 0 0.9em 0.3em black;
+    background-color: red;
+}
+.slider__text p {
+    transition: opacity 2s ease-in-out;
+}
+#btn-1:checked ~ .slider-bottom .slider__text p:not(:first-of-type),
+#btn-2:checked ~ .slider-bottom .slider__text p:not(:nth-of-type(2)),
+#btn-3:checked ~ .slider-bottom .slider__text p:not(:nth-of-type(3)),
+#btn-4:checked ~ .slider-bottom .slider__text p:not(:nth-of-type(4)),
+#btn-5:checked ~ .slider-bottom .slider__text p:not(:nth-of-type(5)),
+#btn-6:checked ~ .slider-bottom .slider__text p:not(:nth-of-type(6)),
+#btn-7:checked ~ .slider-bottom .slider__text p:not(:last-of-type) {
+    opacity: 0;
+    font-size: 0;
+}
+#btn-1:checked ~ .slider-bottom .slider__text p ,
+#btn-2:checked ~ .slider-bottom .slider__text p,
+#btn-3:checked ~ .slider-bottom .slider__text p,
+#btn-4:checked ~ .slider-bottom .slider__text p,
+#btn-5:checked ~ .slider-bottom .slider__text p,
+#btn-6:checked ~ .slider-bottom .slider__text p,
+#btn-7:checked ~ .slider-bottom .slider__text p  {
+    opacity: 1;
+}
+
+#btn-1:checked ~ .slider__slides .slider__item:not(:first-of-type),
+#btn-2:checked ~ .slider__slides .slider__item:not(:nth-of-type(2)),
+#btn-3:checked ~ .slider__slides .slider__item:not(:nth-of-type(3)),
+#btn-4:checked ~ .slider__slides .slider__item:not(:nth-of-type(4)),
+#btn-5:checked ~ .slider__slides .slider__item:not(:nth-of-type(5)),
+#btn-6:checked ~ .slider__slides .slider__item:not(:nth-of-type(6)),
+#btn-7:checked ~ .slider__slides .slider__item:not(:last-of-type)
+{
+    opacity: 0;
+}
+#btn-1:checked ~ .slider__slides .slider__item {
+    transform: translateX(0);
+}
+#btn-2:checked ~ .slider__slides .slider__item {
+    transform: translateX(-100%);
+}
+#btn-3:checked ~ .slider__slides .slider__item {
+    transform: translateX(-200%);
+}
+#btn-4:checked ~ .slider__slides .slider__item {
+    transform: translateX(-300%);
+}
+#btn-5:checked ~ .slider__slides .slider__item {
+    transform: translateX(-400%);
+}
+#btn-6:checked ~ .slider__slides .slider__item {
+    transform: translateX(-500%);
+}
+#btn-7:checked ~ .slider__slides .slider__item {
+    transform: translateX(-600%);
+}
+#btn-1:checked ~ .slider-bottom .slider__controls label[for="btn-1"] .marker,
+#btn-2:checked ~ .slider-bottom .slider__controls label[for="btn-2"] .marker,
+#btn-3:checked ~ .slider-bottom .slider__controls label[for="btn-3"] .marker,
+#btn-4:checked ~ .slider-bottom .slider__controls label[for="btn-4"] .marker,
+#btn-5:checked ~ .slider-bottom .slider__controls label[for="btn-5"] .marker,
+#btn-6:checked ~ .slider-bottom .slider__controls label[for="btn-6"] .marker,
+#btn-7:checked ~ .slider-bottom .slider__controls label[for="btn-7"] .marker {
+    background-color: #666666;
+}
+.slider-bottom .slider__controls label[for="btn-1"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-2"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-3"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-4"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-5"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-6"]:hover .marker,
+.slider-bottom .slider__controls label[for="btn-7"]:hover .marker {
+    background-color: black;
+}
+#btn-1:checked ~ .slider-bottom .slider__controls label[for="btn-1"]:hover .marker,
+#btn-2:checked ~ .slider-bottom .slider__controls label[for="btn-2"]:hover .marker,
+#btn-3:checked ~ .slider-bottom .slider__controls label[for="btn-3"]:hover .marker,
+#btn-4:checked ~ .slider-bottom .slider__controls label[for="btn-4"]:hover .marker,
+#btn-5:checked ~ .slider-bottom .slider__controls label[for="btn-5"]:hover .marker,
+#btn-6:checked ~ .slider-bottom .slider__controls label[for="btn-6"]:hover .marker,
+#btn-7:checked ~ .slider-bottom .slider__controls label[for="btn-7"]:hover .marker {
+    background-color: black;
+}
+
+@media (max-width: 1279px) {
+    .slider__item-img:last-of-type {
+        height: auto;
+    }
+}
+@media (max-width: 828px) {
+    .slider__item-img {
+        height: auto;
+    }
+    .slider-bottom {
+        flex-direction: column-reverse;
+    }
+    .slider__text p {
+        margin-bottom: 0;
+    }
+}
